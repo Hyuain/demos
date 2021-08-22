@@ -1,0 +1,13 @@
+#box {
+  background: beige;
+  /**
+   * 这里的 color 已经在 X 生效了
+   * 但他会被 input 中的默认样式给覆盖
+   * 可以在组件中的 input 中加上 color: inherit 来让这个样式生效
+   */
+  color: cadetblue;
+}
+/* 无论组件加不加 inherit，都是不生效的，因为是影子节点 */
+input {
+  color: coral;
+}

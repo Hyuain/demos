@@ -8,6 +8,16 @@
   <title>Web Component: SearchBox</title>
 </head>
 <body>
-
+  <link rel="stylesheet" href="index.css" type="text/css">
+  <h1>Web Component: SearchBox</h1>
+  <hr>
+  <search-box id="box" placeholder="点击这里搜索" value=""></search-box>
+  <div style="margin-top: 12px">
+    <button onclick="handleToggleDisabled()">Toggle Disabled</button>
+    <button onclick="handleToggleHidden()">Toggle Hidden</button>
+    <button onclick="handleChangeValue()">Value +1</button>
+  </div>
+  <script type="module" src="search-box.js"></script>
+  <script src="index.js"></script>
 </body>
 </html>
