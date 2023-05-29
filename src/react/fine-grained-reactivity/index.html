@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>细粒度更新</title>
+</head>
+
+<body>
+  <p>来自于《React 设计原理》</p>
+  <p>根据自变量因变量的理论，自变量的改变可以直接引发 UI 更新、或导致因变量改变从而间接引发 UI 更新</p>
+  <p>因变量可以分为<strong>无副作用因变量</strong>和<strong>有副作用因变量</strong>，我们可以这样定义无副作用因变量：</p>
+  <pre>
+    // 在 React 中定义无副作用因变量
+    const y = useMemo(() => x * 2 + 1, [x])
+    // 在 Vue 中定义无副作用因变量
+    const y = computed(() => x.value * 2 + 1)
+    // 在 Mobx 中定义无副作用因变量
+    const y = computed(() => x.get() * 2 + 1)
+  </pre>
+  <p>可以发现在 React 中是需要指明依赖的，而在 Vue 和 Mobx 中则不需要，他们会自动追踪依赖，这被称为<strong>细粒度更新</strong></p>
+  <p>在 index.js 中，是书中所提的一个细粒度更新的示例</p>
+  <script src="./index.js"></script>
+</body>
+
+</html>
